@@ -1,10 +1,13 @@
 
 public abstract class PokeAbstract implements PokemonMethods {
 	
-	public void createPokemon(String name, int health, String type) {
-		Pokemon create = new Pokemon(name, health, type);
-		create.getName();
-		create.getHealth();
-		create.getType();
+	public Pokemon createPokemon(String name, int health, String type) {
+		return new Pokemon(name, health, type);
 	}
+	
+	public void attackPokemon(Pokemon poke) {
+		int currentHealth = poke.getHealth() - 10;
+		poke.setHealth(currentHealth);
+	}
+	
 }
